@@ -1,0 +1,36 @@
+?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system" method="upgrade">
+	<name>HikaShop R2H custom decimal field</name>
+	<creationDate>25-3-2016</creationDate>
+	<version>1.0.0</version>
+	<author>Rick Spaan</author>
+	<authorEmail>rick@r2h.nl</authorEmail>
+	<authorUrl>http://www.r2h.nl</authorUrl>
+	<copyright>(C) 2010-2016 R2H B.V.. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>HikaShop R2H calculate by meter plugin</description>
+	<files>
+		<filename plugin="custom_pricer2h">custom_pricer2h.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<params addpath="/components/com_hikashop/params">
+		<param name="taxes" type="radio" default="0" label="HIKA_TAXES_HANDLING" description="TAXES_HANDLING">
+			<option value="0">No taxes</option>
+			<option value="1">On top of the amount</option>
+			<option value="2">already included in the amount</option>
+		</param>
+		<param name="field" type="text" size="20" default="amount" label="COLUMN_NAME_OF_THE_FIELD" description="CUSTOM_PRICE_COLUMN_NAME" />
+	</params>
+	<config>
+		<fields name="params" addfieldpath="/components/com_hikashop/fields">
+			<fieldset name="basic">
+				<field name="taxes" type="radio" default="0" label="HIKA_TAXES_HANDLING" description="TAXES_HANDLING">
+					<option value="0">No taxes</option>
+					<option value="1">On top of the amount</option>
+					<option value="2">already included in the amount</option>
+				</field>
+				<field name="field" type="text" size="20" default="amount" label="COLUMN_NAME_OF_THE_FIELD" description="CUSTOM_PRICE_COLUMN_NAME" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>
