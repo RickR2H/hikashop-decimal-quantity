@@ -9,6 +9,8 @@ Use this plugin to show an extra field which can be used to enter a decimal valu
 * Save the plugin and then assign the categories on which the plugin should be active
 * Go to the Hikashop configuration or assigned menu item and set the "Quantity input method" to none
 * Now only the custom field is visible.
-* A "," or "." can be used as digital separator 
+* A "," or "." can be used as digital separator
+
+NOTE: There is some hard coded stuff (&euro; and m1 sign) in the plugin but these things can easily be removed or changed.
 
 If you have any problems, please let me know! This plugin is tested on Hikashop 2.6.3
