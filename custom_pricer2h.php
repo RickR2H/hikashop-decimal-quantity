@@ -92,7 +92,7 @@ if(!function_exists('hikashop_product_price_for_quantity_in_cart') && !function_
 			}
 
 			$product->$column = str_replace('.',',',$product->$column);
-			$product->$column = $product->$column . ' m - € ' . number_format(round($original_product_price, 2), 2, ',', ' ') .' / m1';
+			$product->$column = $product->$column . ' m - &euro; ' . number_format(round($original_product_price, 2), 2, ',', ' ') .' / m1';
 
 			$currencyClass->quantityPrices($product->prices,$quantity,$product->cart_product_total_quantity);
 		}
