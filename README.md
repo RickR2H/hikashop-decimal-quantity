@@ -1,15 +1,16 @@
-# hikashop-decimal-quantity
-Use this plugin to show an extra field which can be used to enter a decimal value as quantity.
+# Hikashop decimal quantity field
+Use this plugin to show an extra field which can be used to enter a decimal value as quantity for a product.
 
 ## How to use the plugin
-* Install and activate the plugin
-* To sell something by the decimal meter (1.56 m1) set in the plugin the "Taxes handling" to "On top of the amount" and the "Column name of the field" to "meter"
-* Go to Hikashop -> Display -> Custom Fields and click new
-* Set the "Label" to "Length (m1)", "Table" to "item", "Column name" to "meter", "Field type" to "text" "Default value" to "1,00"
-* Save the plugin and then assign the categories on which the plugin should be active
-* Go to the Hikashop configuration or assigned menu item and set the "Quantity input method" to none
-* Now only the custom field is visible.
-* A "," or "." can be used as digital separator
+* Install and activate this plugin
+* To sell something by the decimal quantity set "Taxes handling" to "already included in the amount"
+* Set the "Column name of the field" to a value representing the decimal quantity (length, milliliters etc.). Default is "length"
+- Go to Hikashop -> Display -> Custom Fields and click New
+- Set the "Label" to "Length (m1)", "Table" to "item", "Column name" to "length", "Field type" to "text" "Default value" to "1,00"
+- Save the plugin and then assign in the field settings the categories on which the plugin should be active
+- Go to the Hikashop configuration or assigned menu item, and set the "Quantity input method" to none
+- Now only the custom field is visible.
+- A "," or "." can be used as digital separator when adding text to the field
 
 NOTE: There is some hard coded stuff (&euro; and m1 sign) in the plugin but these things can easily be removed or changed.
 
