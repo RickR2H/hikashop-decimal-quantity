@@ -1,25 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="2.5" type="plugin" group="system" method="upgrade">
-	<name>HikaShop R2H custom decimal field</name>
+	<name>R2H calculate by decimal quantity plugin for Hikashop 3.x</name>
 	<creationDate>25-3-2016</creationDate>
-	<version>1.0.0</version>
+	<version>2.0.0</version>
 	<author>Rick Spaan</author>
 	<authorEmail>rick@r2h.nl</authorEmail>
 	<authorUrl>http://www.r2h.nl</authorUrl>
 	<copyright>(C) 2010-2016 R2H B.V.. All rights reserved.</copyright>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
-	<description>HikaShop R2H calculate by meter plugin</description>
+	<description>
+		<![CDATA[
+			<H4>How to use this plugin</H4>
+			<ul>
+			<li>Activate this plugin</li>
+			<li>To sell something by the decimal quantity set "Taxes handling" to "already included in the amount"</li>
+			<li>Set the "Column name of the field" to a value representing the decimal quantity (length, milliliters etc.). Default is length</li>
+			<li>Go to Hikashop -&gt; Display -&gt; Custom Fields and click new</li>
+			<li>Set the "Label" to "Length (m1)", "Table" to "item", "Column name" to "length", "Field type" to "text" "Default value" to "1,00"</li>
+			<li>Save the plugin and then assign the categories on which the plugin should be active</li>
+			<li>Go to the Hikashop configuration or assigned menu item, and set the "Quantity input method" to none</li>
+			<li>Now only the custom field is visible.</li>
+			<li>A "," or "." can be used as digital separator when adding text to the field</li>
+			</ul>
+		]]>
+	</description>
 	<files>
 		<filename plugin="custom_pricer2h">custom_pricer2h.php</filename>
 		<filename>index.html</filename>
 	</files>
 	<params addpath="/components/com_hikashop/params">
-		<param name="taxes" type="radio" default="0" label="HIKA_TAXES_HANDLING" description="TAXES_HANDLING">
+		<param name="taxes" type="radio" default="2" label="HIKA_TAXES_HANDLING" description="TAXES_HANDLING">
 			<option value="0">No taxes</option>
 			<option value="1">On top of the amount</option>
 			<option value="2">already included in the amount</option>
 		</param>
-		<param name="field" type="text" size="20" default="amount" label="COLUMN_NAME_OF_THE_FIELD" description="CUSTOM_PRICE_COLUMN_NAME" />
+		<param name="field" type="text" size="20" default="length" label="COLUMN_NAME_OF_THE_FIELD" description="CUSTOM_PRICE_COLUMN_NAME" />
 	</params>
 	<config>
 		<fields name="params" addfieldpath="/components/com_hikashop/fields">
@@ -29,7 +44,7 @@
 					<option value="1">On top of the amount</option>
 					<option value="2">already included in the amount</option>
 				</field>
-				<field name="field" type="text" size="20" default="amount" label="COLUMN_NAME_OF_THE_FIELD" description="CUSTOM_PRICE_COLUMN_NAME" />
+				<field name="field" type="text" size="20" default="length" label="COLUMN_NAME_OF_THE_FIELD" description="CUSTOM_PRICE_COLUMN_NAME" />
 			</fieldset>
 		</fields>
 	</config>
